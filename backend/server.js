@@ -53,6 +53,8 @@ app.use((error, req, res , next) => {
   res.status(status).send({message: error.message})
 })
 
-app.listen(3000, () => {
-    console.log('server is up and running...')
+const port = process.env.PORT || 3000
+
+app.listen(port, () => {
+    console.log('server is up and running on port:', port)
 })
