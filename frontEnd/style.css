@@ -1,0 +1,525 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+body {
+  font-size: 1rem !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+ul {
+  list-style-type: none !important;
+}
+
+button {
+  border: none;
+  outline: none !important;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+/******
+overlay
+******/
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(22, 22, 22, 0.5);
+}
+
+.overlay.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.message-container {
+  background-color: white;
+  border-radius: 1rem;
+  border: 0.1rem solid lightgray;
+  max-width: 50rem;
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.message-container > * {
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+/*******
+ HEADER
+*********/
+.header {
+  background-color: #2a2f31;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.mynavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+.mynavbar .brand a {
+  color: lightgray;
+  font-size: 2rem;
+  margin: 0 1rem;
+}
+.mynavbar .menu-but {
+  background-color: transparent;
+  color: lightgray;
+}
+.mynavbar .links a {
+  color: lightgray;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+}
+.mynavbar .links a:hover {
+  color: #b4ceb3;
+}
+
+/************
+ASIDE
+*************/
+.aside {
+  width: 30rem;
+  height: 100%;
+  background-color: #546a76;
+  color: #fad4d8;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transform: translateX(-30rem);
+}
+.aside h2 {
+  margin: 2rem;
+}
+.aside ul li {
+  margin: 2rem;
+}
+.aside ul li a {
+  color: #fad4d8;
+}
+.aside ul li a:hover {
+  color: #b4ceb3;
+}
+.aside .close {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+}
+.aside .close i {
+  color: white;
+}
+
+.aside.openmenu {
+  transform: translateX(0);
+}
+
+/**********
+MAIN
+***********/
+main {
+  min-height: 100vh;
+}
+
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mycard {
+  background-color: white;
+  margin: 2rem;
+  border-bottom: 3px solid #546a76;
+}
+.mycard a {
+  transition: opacity 0.3s;
+}
+.mycard a img {
+  max-width: 25rem;
+  max-height: 30rem;
+}
+.mycard a:hover {
+  opacity: 0.7;
+}
+
+.mycard-content {
+  padding: 1rem;
+}
+.mycard-content a {
+  color: black;
+}
+.mycard-content a:hover {
+  color: #b4ceb3;
+}
+.mycard-content .name {
+  font-size: 2rem;
+}
+.mycard-content .status {
+  color: #88a0a8;
+}
+.mycard-content .price {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/***********
+FOOTER
+***********/
+.footer {
+  background-color: #2a2f31;
+  display: flex;
+  justify-content: center;
+}
+.footer .content p {
+  color: #ffffff;
+}
+
+/* rating starts*/
+.rating {
+  color: rgb(240, 205, 6);
+}
+
+.rating-text {
+  color: black;
+  margin-left: 0.5rem;
+}
+
+/* product screen */
+.product-page {
+  padding: 0.5rem;
+}
+
+.product-link a {
+  color: black;
+  direction: none;
+}
+
+.product-link a:hover {
+  color: #546a76;
+}
+
+.product-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.product-image {
+  flex-grow: 1;
+  padding: 0;
+  margin: 0;
+}
+
+.procuct-image img {
+  max-width: 35rem;
+  width: 100%;
+}
+
+.product-details,
+.product-card {
+  flex-grow: 1;
+  font-size: 1.5rem;
+}
+
+.product-details li,
+.product-card li {
+  margin-bottom: 1.5rem;
+}
+
+.product-card {
+  border: 3px solid lightgray;
+  background-color: rgb(245, 241, 241);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.product-button {
+  background-color: rgb(238, 203, 5);
+  color: black;
+  align-items: center;
+  font-size: 1rem;
+  border: 3px solid lightgrey;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.product-button:hover,
+.normal-button:hover {
+  background-color: rgb(196, 167, 4);
+}
+
+.normal-button {
+  background-color: rgb(238, 203, 5);
+  color: black;
+  align-items: center;
+  font-size: 1rem;
+  border: 3px solid lightgrey;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin: 1rem;
+}
+/*cart screen*/
+
+.cart {
+  display: flex;
+  padding: 1rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.card-detail {
+  flex: 3;
+}
+
+.card-detail li:first-child {
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.card-detail li {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 1rem;
+  border-bottom: 0.1rem lightgray solid;
+  padding: 1rem;
+}
+
+.card-product-image {
+  flex: 2;
+}
+
+.card-product-image img {
+  max-width: 8rem;
+  max-height: 8rem;
+}
+
+.card-product-name {
+  flex: 6;
+}
+
+.item-link {
+  color: black;
+  font-weight: bold;
+}
+
+.item-link:hover {
+  color: grey;
+}
+
+.delete {
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  margin-left: 1rem;
+}
+
+.delete:hover {
+  background-color: rgb(167, 167, 167);
+}
+
+.card-product-price {
+  flex: 1;
+  text-align: right;
+}
+
+.card-action {
+  flex: 1;
+}
+
+.card-action {
+  padding: 1.5rem 1rem;
+  margin-top: 1rem;
+  background-color: rgb(241, 238, 238);
+  border-radius: 1rem;
+}
+
+.card-action h3 {
+  margin-bottom: 2rem;
+}
+
+/*signin */
+
+.form-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-form {
+  width: 34rem;
+  border: 0.2rem lightgrey solid;
+  padding: 1rem;
+}
+
+.signin-form h1,
+.signin-form input,
+.signin-form button {
+  margin-bottom: 1.5rem;
+}
+
+/*check out*/
+
+.checkout-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+.checkout-container > div {
+  padding: 1rem;
+  color: lightgray;
+  border-top: 0.2rem solid lightgray;
+}
+
+.checkout-container > div.active {
+  border-top: 0.2rem solid gold;
+  color: gold;
+}
+
+/* place order */
+
+.placeOrder {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+
+.placeOrder-info {
+  flex: 3;
+}
+
+.info-item {
+  border: 0.1rem solid lightgray;
+  border-radius: 10px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.info-item h2 {
+  margin-bottom: 1rem;
+}
+
+.info-item li {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-between;
+  border-bottom: 0.1rem solid lightgray;
+}
+
+.placeOrder-action {
+  flex: 1;
+  margin: 1rem;
+  padding: 1rem;
+  border: 0.1rem solid lightgray;
+  border-radius: 10px;
+}
+
+.placeOrder-action li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.placeOrder-action li:last-child p {
+  font-size: 1.5rem;
+  color: rgb(221, 57, 57);
+}
+
+/*profile*/
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 1rem;
+}
+
+.orders {
+  flex: 3;
+  margin: 0 0.5rem;
+}
+
+.profile-form {
+  flex: 1;
+  margin: 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* dashboard */
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+.dashboard-menu {
+  flex: 1;
+  padding: 1rem 0;
+  background-color: lightgray;
+}
+
+.dashboard-menu a {
+  display: flex;
+  padding: 1rem;
+  padding-left: 2.5rem;
+  width: 100%;
+  color: rgb(189, 60, 240);
+}
+
+.dashboard-menu a:hover {
+  background-color: rgb(192, 190, 190);
+  color: rgb(224, 146, 1);
+}
+
+.dashboard-menu li.selected a {
+  background-color: rgb(192, 190, 190);
+}
+
+.dashboard-content {
+  flex: 4;
+  margin: 1rem;
+}
+
+/* product list */
+.table-button {
+  background-color: rgb(223, 223, 223);
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.table-button:hover {
+  background-color: rgb(197, 194, 194);
+}
